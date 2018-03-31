@@ -1,0 +1,29 @@
+//Items
+item.blue_book.name=§9Blue §6§lBook
+item.blue_slimeball.name=§9Blue §a§lSlimeball
+item.key.name=§6Key
+item.lock_pick.name=§8Lock Pick
+
+//Blocks
+tile.blue_slime_block.name=§9Blue §a§lSlime block
+tile.white_oak_planks.name=§fWhite §6§lOak Planks
+tile.orange_oak_planks.name=§6Orange §6§lOak Planks
+tile.magenta_oak_planks.name=§dMagenta §6§lOak Planks
+tile.light_blue_oak_planks.name=§bLight Blue §6§lOak Planks
+tile.yellow_oak_planks.name=§eYellow §6§lOak Planks
+tile.lime_oak_planks.name=§aLime §6§lOak Planks
+tile.pink_oak_planks.name=§dPink §6§lOak Planks
+tile.gray_oak_planks.name=§8Gray §6§lOak Planks
+tile.light_gray_oak_planks.name=§7Light Gray §6§lOak Planks
+tile.cyan_oak_planks.name=§3Cyan §6§lOak Planks
+tile.purple_oak_planks.name=§5Purple §6§lOak Planks
+tile.blue_oak_planks.name=§9Blue §6§lOak Planks
+tile.brown_oak_planks.name=§6Brown §6§lOak Planks
+tile.red_oak_planks.name=§cRed §6§lOak Planks
+tile.green_oak_planks.name=§2Green §6§lOak Planks
+tile.black_oak_planks.name=§0Black §6§lOak Planks
+tile.trick_wool.name=§cTrick §f§lWool
+
+tile.secret_door.name=§8Secret Door
+//Tab(s)
+itemGroup.tab_marcus8448=§9marcus8448's §6§lTab
