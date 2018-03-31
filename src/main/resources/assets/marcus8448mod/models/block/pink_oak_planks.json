@@ -1,0 +1,6 @@
+{
+   "parent": "block/cube_all",
+   "textures": {
+       "all": "marcus8448mod:blocks/pink_oak_planks"
+   }
+}

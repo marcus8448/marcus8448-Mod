@@ -1,0 +1,21 @@
+{
+  "type": "minecraft:crafting_shapeless",
+  "group": "coloured_oak_planks",
+  "ingredients": [
+    {
+      "item": "minecraft:planks",
+	  "data": 0,
+	  "count": 1
+    },
+    {
+      "item": "minecraft:dye",
+	  "data": 4,
+	  "count": 1
+    }
+  ],
+  "result": {
+    "item": "marcus8448mod:blue_oak_planks",
+	"data": 0,
+	"count": 1
+  }
+}

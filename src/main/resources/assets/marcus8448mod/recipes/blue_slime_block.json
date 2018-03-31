@@ -1,0 +1,21 @@
+{
+  "result": {
+    "item": "marcus8448mod:blue_slime_block",
+    "data": 0,
+    "count": 1
+  },
+  "pattern": [
+    "SSS",
+    "SSS",
+    "SSS"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "S": {
+      "item": "marcus8448mod:blue_slimeball",
+	  "data": 0,
+      "count": 1
+		}
+    }
+ 
+}
