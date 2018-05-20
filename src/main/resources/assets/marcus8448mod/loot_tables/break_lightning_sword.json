@@ -1,0 +1,12 @@
+{
+  "pools": [
+    {
+      "name": "shards",
+      "rolls": 1,
+      "entries": [{
+        "type": "item",
+        "name": "marcus8448mod:lightning_shard"
+      }]
+    }
+  ]
+} 

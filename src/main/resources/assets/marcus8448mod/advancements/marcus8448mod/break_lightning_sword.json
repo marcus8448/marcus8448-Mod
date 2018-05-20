@@ -1,0 +1,35 @@
+{
+    "display": {
+        "icon": {
+            "item": "marcus8448mod:lightning_shard"
+        },
+        "description":{  
+         "text":"Break a lightning sword",
+         "color":"gray"
+      },
+      "title":{  
+         "text":"I've been grinding mobs",
+         "bold": true,
+         "color":"blue"
+      },
+        "frame": "challenge"
+    },
+    "parent": "marcus8448mod:marcus8448mod/create_lightning_sword",
+    "rewards": {
+        "experience": 100,
+        "loot": [
+        	"marcus8448mod:break_lightning_sword"
+        ]
+    },
+    "criteria": {
+        "broke_hoe": {
+            "trigger": "minecraft:item_durability_changed",
+            "conditions": {
+                "item": {
+                    "item": "marcus8448mod:lightning_sword"
+                },
+                "durability": -1
+            }
+        }
+    }
+}

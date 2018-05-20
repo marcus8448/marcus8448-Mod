@@ -1,0 +1,25 @@
+{
+  "result": {
+    "item": "marcus8448mod:glass_sword",
+    "data": 0,
+    "count": 1
+  },
+  "pattern": [
+    "L",
+    "L",
+    "S"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": {
+      "item": "marcus8448mod:sharp_glass",
+	  "data": 0,
+      "count": 1
+    },
+    "S": {
+      "item": "minecraft:stick",
+      "data": 0,
+	  "count": 1
+    }
+  }
+}

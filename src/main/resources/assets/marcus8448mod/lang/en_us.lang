@@ -3,6 +3,15 @@ item.blue_book.name=§9Blue §6§lBook
 item.blue_slimeball.name=§9Blue §a§lSlimeball
 item.key.name=§6Key
 item.lock_pick.name=§8Lock Pick
+item.glass_sword.name=§fGlass Sword
+item.lightning_sword.name=§9Light§fning §9Swo§frd
+item.xp_food.name=§a§lXP §6Food
+item.compressed_obsidian_sword.name=§5Compressed Obsidian §9Sword
+item.lightning_shard.name=§9Light§fning §9Sha§frd
+item.glass_shard.name=§fGlass shard
+item.corn.name=Corn
+item.corn_seed.name=Corn Seed
+item.sharp_glass.name=§fSharp glass
 
 //Blocks
 tile.blue_slime_block.name=§9Blue §a§lSlime block
@@ -23,7 +32,13 @@ tile.red_oak_planks.name=§cRed §6§lOak Planks
 tile.green_oak_planks.name=§2Green §6§lOak Planks
 tile.black_oak_planks.name=§0Black §6§lOak Planks
 tile.trick_wool.name=§cTrick §f§lWool
+tile.compressed_obsidian.name=§5Compressed Obsidian
+tile.pedestal.name=§7Pedestal
 
 tile.secret_door.name=§8Secret Door
-//Tab(s)
-itemGroup.tab_marcus8448=§9marcus8448's §6§lTab
+//Tabs
+itemGroup.tab_marcus8448_items=§9marcus8448's Item §6§lTab
+itemGroup.tab_marcus8448_blocks=§9marcus8448's Block §6§lTab
+
+//Text
+text.join_server_message=§9Thank you for downloading §lMarcus8448's Mod V0.6.3§9! Go to §6https://marcus8448.com/mods/ §9for more!

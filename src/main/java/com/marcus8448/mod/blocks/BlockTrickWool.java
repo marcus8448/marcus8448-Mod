@@ -5,7 +5,7 @@ import java.util.List;
 import org.lwjgl.input.Keyboard;
 
 import com.marcus8448.mod.Marcus8448Mod;
-import com.marcus8448.mod.items.Items;
+import com.marcus8448.mod.items.MMItems;
 import com.marcus8448.mod.utils.IHasModel;
 
 import net.minecraft.block.Block;
@@ -17,20 +17,26 @@ import net.minecraft.item.ItemBlock;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
+/**
+ * 
+ * @author marcus8448
+ * @since 1.12.2-0.0.0_preAlpha1
+ *
+ */
 public class BlockTrickWool extends Block implements IHasModel{
 
 	public BlockTrickWool(String name, Material material) {
 		super(material);
 		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
-		this.setCreativeTab(Marcus8448Mod.marcus8448Tab);
+		this.setCreativeTab(Marcus8448Mod.marcus8448TabBlocks);
 		this.setSoundType(SoundType.CLOTH);
 		this.setHardness(10F);
 		this.setHarvestLevel("ItemAxe", 2);
 		this.setResistance(100F);
 		
-		Blocks.BLOCKS.add(this);
-		Items.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+		MMBlocks.BLOCKS.add(this);
+		MMItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
 	}
 
 	

@@ -1,0 +1,28 @@
+{
+    "display": {
+        "icon": {
+            "item": "minecraft:snow"
+        },
+        "description":{  
+			"text":"Summon a snowman.",
+			"color":"gray"
+		},
+		"title":{  
+			"text":"Snowy business",
+			"bold":true,
+			"color":"blue"
+		},
+        "frame": "goal"
+    },
+    "parent": "marcus8448mod:marcus8448mod/create_blue_book,",
+    "criteria": {
+        "summoned_golem": {
+            "trigger": "minecraft:summoned_entity",
+            "conditions": {
+                "entity": {
+                    "type": "minecraft:snowman"
+                }
+            }
+        }
+    }
+}

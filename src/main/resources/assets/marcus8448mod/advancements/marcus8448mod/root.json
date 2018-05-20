@@ -1,0 +1,28 @@
+{  
+   "display":{  
+   "icon": {
+            "item": "marcus8448mod:blue_slimeball"
+        },
+      "description":{  
+         "text":"The adventure begins...",
+         "color":"gray"
+      },
+      "title":{  
+         "text":"Marcus8448's Mod",
+         "bold": true,
+         "color":"blue"
+      },
+      "background": "marcus8448mod:textures/gui/advancements/backgrounds/marcus8448modtab.png"
+   },
+   "criteria":{  
+	  "marcus_biome": {
+            "trigger": "minecraft:location",
+            "conditions": {
+                "biome": "marcus8448mod:marcus_biome"
+            }
+        }
+   },
+   "rewards":{  
+      "experience":100
+   }
+}

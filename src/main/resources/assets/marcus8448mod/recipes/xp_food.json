@@ -1,0 +1,19 @@
+{
+  "result": {
+    "item": "marcus8448mod:xp_food",
+    "data": 0,
+    "count": 1
+  },
+  "pattern": [
+    "BB",
+    "BB"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "B": {
+      "item": "minecraft:experience_bottle",
+	  "data": 0,
+      "count": 1
+    }
+  }
+}

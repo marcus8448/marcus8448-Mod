@@ -1,0 +1,25 @@
+{
+  "result": {
+    "item": "marcus8448mod:lightning_sword",
+    "data": 0,
+    "count": 1
+  },
+  "pattern": [
+    "LL",
+    "LL",
+    "SS"
+  ],
+  "type": "minecraft:crafting_shaped",
+  "key": {
+    "L": {
+      "item": "marcus8448mod:lightning_shard",
+	  "data": 0,
+      "count": 1
+    },
+    "S": {
+      "item": "minecraft:stick",
+      "data": 0,
+	  "count": 1
+    }
+  }
+}

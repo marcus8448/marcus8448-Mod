@@ -1,0 +1,12 @@
+{
+	"forge_marker": 1,
+	"variants": {
+		"normal": {
+			"model": "marcus8448mod:pedestal"
+		},
+		"inventory": {
+			"model": "marcus8448mod:pedestal",
+			"transform": "forge:default-block"
+		}
+	}
+}

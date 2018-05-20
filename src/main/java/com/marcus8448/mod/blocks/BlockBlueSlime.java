@@ -1,14 +1,12 @@
 package com.marcus8448.mod.blocks;
 
-
-
 import java.util.List;
 import java.util.Random;
 
 import org.lwjgl.input.Keyboard;
 
 import com.marcus8448.mod.Marcus8448Mod;
-import com.marcus8448.mod.items.Items;
+import com.marcus8448.mod.items.MMItems;
 import com.marcus8448.mod.utils.Constants;
 import com.marcus8448.mod.utils.IHasModel;
 
@@ -27,6 +25,12 @@ import net.minecraft.world.World;
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
+/**
+ * 
+ * @author marcus8448
+ * @since 1.12.2-0.0.0_preAlpha1
+ *
+ */
 public class BlockBlueSlime extends Block implements IHasModel{
 
 	float fd = 0;
@@ -36,13 +40,13 @@ public class BlockBlueSlime extends Block implements IHasModel{
 		this.name = name;
 		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
-		this.setCreativeTab(Marcus8448Mod.marcus8448Tab);
+		this.setCreativeTab(Marcus8448Mod.marcus8448TabBlocks);
 		this.setSoundType(SoundType.SLIME);
 		this.setHardness(0.2F);
 		this.setResistance(45F); //Very flexible jelly/Slime!
 		
-		Blocks.BLOCKS.add(this);
-		Items.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+		MMBlocks.BLOCKS.add(this);
+		MMItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
 	}
 	
 	@SideOnly(Side.CLIENT)

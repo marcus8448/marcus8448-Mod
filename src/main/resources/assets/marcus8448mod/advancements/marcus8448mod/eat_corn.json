@@ -1,0 +1,29 @@
+{  
+   "display":{  
+	    "icon": {
+            "item": "marcus8448mod:corn"
+        },
+		"description":{  
+			"text":"Eat some corn",
+			"color":"gray"
+		},
+		"title":{  
+			"text":"Sweet!",
+			"bold":true,
+			"color":"blue"
+		}
+			
+	},
+	"parent": "marcus8448mod:marcus8448mod/plant_corn",
+	"criteria":{  
+	
+		"corn": {
+            "trigger": "consume_item",
+            "conditions": {
+                "item": {
+                    "item": "marcus8448mod:corn"
+                }
+            }
+        }
+   }
+}

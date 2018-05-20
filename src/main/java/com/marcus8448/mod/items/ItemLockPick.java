@@ -15,13 +15,19 @@ import net.minecraft.util.EnumActionResult;
 import net.minecraft.util.EnumHand;
 import net.minecraft.world.World;
 
+/**
+ * 
+ * @author marcus8448
+ * @since 1.12.2-0.0.0_preAlpha2
+ *
+ */
 public class ItemLockPick extends Item implements IHasModel {
 
 	public ItemLockPick(String name) {
 		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
-		this.setCreativeTab(Marcus8448Mod.marcus8448Tab);
-		Items.ITEMS.add(this);
+		this.setCreativeTab(Marcus8448Mod.marcus8448TabItems);
+		MMItems.ITEMS.add(this);
 		this.isDamageable();
 		this.setMaxDamage(0);
 	}

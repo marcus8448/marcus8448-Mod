@@ -1,0 +1,34 @@
+{  
+   "display":{  
+	    "icon": {
+            "item": "marcus8448mod:blue_book"
+        },
+		"description":{  
+			"text":"Craft a blue book",
+			"color":"gray"
+		},
+		"title":{  
+			"text":"This is weird",
+			"bold":true,
+			"color":"blue"
+		}
+			
+	},
+	"parent": "marcus8448mod:marcus8448mod/root",
+	"criteria":{  
+		"make_book": {
+				"trigger": "minecraft:inventory_changed",
+				"conditions": {
+				"items": [
+				{
+					"item": "marcus8448mod:blue_book",
+                    "data": 0,
+                    "count": {
+					"min": 1
+                           }
+                       }
+					]
+            }
+        }
+   }
+}

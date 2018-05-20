@@ -1,0 +1,40 @@
+{  
+   "display":{  
+   "icon": {
+            "item": "marcus8448mod:lightning_sword"
+        },
+      "description":{  
+         "text":"Create a lightning sword",
+         "color":"gray"
+      },
+      "title":{  
+         "text":"I'm too OP",
+         "bold":true,
+         "color":"blue"
+      },
+	  "frame": "goal"
+	  
+   },
+   "parent": "marcus8448mod:marcus8448mod/root",
+   "criteria":{  
+	  "make_book": {
+            "trigger": "minecraft:inventory_changed",
+               "conditions": {
+                   "items": [
+                       {
+                           "item": "marcus8448mod:lightning_shard",
+                           "data": 0,
+                           "count": {
+                               "min": 1
+                           }
+                       }
+					]
+            }
+        }
+   },
+   "requirements":[  
+      [  
+         "make_book"
+      ]
+   ]
+}

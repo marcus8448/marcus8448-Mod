@@ -11,13 +11,19 @@ import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.world.World;
 
+/**
+ * 
+ * @author marcus8448
+ * @since 1.12.2-0.0.0_preAlpha1
+ *
+ */
 public class ItemBlueSlimeball extends Item implements IHasModel {
 
 	public ItemBlueSlimeball(String name) {
 		this.setUnlocalizedName(name);
 		this.setRegistryName(name);
-		this.setCreativeTab(Marcus8448Mod.marcus8448Tab);
-		Items.ITEMS.add(this);
+		this.setCreativeTab(Marcus8448Mod.marcus8448TabItems);
+		MMItems.ITEMS.add(this);
 	}
 	
 	@Override

@@ -7,6 +7,12 @@ import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
 import net.minecraft.world.gen.feature.WorldGenerator;
 
+/**
+ * 
+ * @author marcus8448
+ * @since 1.12.2-0.0.0_preAlpha3
+ *
+ */
 public class WorldGenObsidian extends WorldGenerator {
 	
 	public boolean generate(World worldIn, Random rand, BlockPos position)
@@ -15,9 +21,9 @@ public class WorldGenObsidian extends WorldGenerator {
         {
             BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if (Blocks.OBSIDIAN.canPlaceBlockAt(worldIn, blockpos) && worldIn.getBlockState(blockpos.down()).getBlock() == com.marcus8448.mod.blocks.Blocks.BLUE_OAK_PLANKS)
+            if (Blocks.OBSIDIAN.canPlaceBlockAt(worldIn, blockpos) && worldIn.getBlockState(blockpos.down()).getBlock() == Blocks.GRASS)
             {
-                worldIn.setBlockState(blockpos, Blocks.OBSIDIAN.getDefaultState(), 2);
+                worldIn.setBlockState(blockpos, Blocks.OBSIDIAN.getDefaultState(), 1);
             }
         }
 
