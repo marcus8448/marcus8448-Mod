@@ -13,7 +13,7 @@ import net.minecraftforge.fml.common.network.IGuiHandler;
 /**
  * 
  * @author marcus8448
- * @since 1.12.2-0.0.0_Alpha
+ * @since 1.12.2-1.0.0_Alpha
  *
  */
 public class GuiHandler implements IGuiHandler {

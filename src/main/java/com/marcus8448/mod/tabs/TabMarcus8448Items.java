@@ -7,7 +7,7 @@ import net.minecraft.item.ItemStack;
 
 /**
  * 
- * @since 1.12.2-0.0.0_preAlpha3
+ * @since 1.12.2-1.0.0_preAlpha3
  * @author marcus8448
  * The class for the items tab
  *

@@ -49,14 +49,14 @@ public class Marcus8448Mod {
      * Items tab
      * @author marcus8448
      * @see TabMarcus8448Items
-     * @since 1.12.2-0.0.0_preAlpha3
+     * @since 1.12.2-1.0.0_preAlpha3
      */
     public static CreativeTabs marcus8448TabItems = new TabMarcus8448Items();
     /**
      * Blocks tab
      * @author marcus8448
      * @see TabMarcus8448Blocks
-     * @since 1.12.2-0.0.0_preAlpha3
+     * @since 1.12.2-1.0.0_preAlpha3
      */
     public static CreativeTabs marcus8448TabBlocks = new TabMarcus8448Blocks();
     

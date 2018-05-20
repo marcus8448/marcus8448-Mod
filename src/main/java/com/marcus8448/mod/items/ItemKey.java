@@ -18,7 +18,7 @@ import net.minecraft.world.World;
 /**
  * 
  * @author marcus8448
- * @since 1.12.2-0.0.0_preAlpha2
+ * @since 1.12.2-1.0.0_preAlpha2
  *
  */
 public class ItemKey extends Item implements IHasModel {

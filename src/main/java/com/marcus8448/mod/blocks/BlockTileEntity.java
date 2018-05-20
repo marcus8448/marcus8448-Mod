@@ -12,7 +12,7 @@ import javax.annotation.Nullable;
 /**
  * 
  * @author marcus8448
- * @since 1.12.2-0.0.0_Alpha
+ * @since 1.12.2-1.0.0_Alpha
  *
  */
 public abstract class BlockTileEntity<TE extends TileEntity> extends BlockBasic {

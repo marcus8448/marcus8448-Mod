@@ -127,7 +127,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 /**
  * 
  * @author marcus8448
- * @since 1.12.2-0.0.0_preAlpha2
+ * @since 1.12.2-1.0.0_preAlpha2
  *
  */
 public class BiomeMarcus8448 extends Biome {

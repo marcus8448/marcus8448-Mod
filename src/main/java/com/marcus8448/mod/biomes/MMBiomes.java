@@ -7,7 +7,7 @@ import net.minecraftforge.common.BiomeManager.BiomeEntry;
 /**
  * 
  * @author marcus8448
- * @since 1.12.2-0.0.0_preAlpha2
+ * @since 1.12.2-1.0.0_preAlpha2
  *
  */
 public class MMBiomes {

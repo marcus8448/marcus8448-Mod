@@ -15,7 +15,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
 /**
  * 
  * @author marcus8448
- * @since 1.12.2-0.0.0_preAlpha3
+ * @since 1.12.2-1.0.0_preAlpha3
  *
  */
 public class ItemCompressedObsidianSword extends ItemSword implements IHasModel {
