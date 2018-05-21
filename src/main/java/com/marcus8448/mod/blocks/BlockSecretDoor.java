@@ -81,10 +81,6 @@ public class BlockSecretDoor extends Block implements IHasModel {
         Marcus8448Mod.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "");
         
     }
-    
-    private void replaceBlocks (BlockPos pos, World worldIn) {
-    	worldIn.setBlockState(pos, getDefaultState(), 0);
-        worldIn.setBlockState(pos, MMBlocks.SECRET_DOOR.getDefaultState());
-    }
+   
              
 }

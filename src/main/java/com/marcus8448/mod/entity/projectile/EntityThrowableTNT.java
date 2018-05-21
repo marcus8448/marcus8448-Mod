@@ -75,7 +75,6 @@ public class EntityThrowableTNT extends EntityThrowable
     }
     private void explode()
     {
-        float f = 5.0F;
-        this.world.createExplosion(this, this.posX, this.posY + (double)(this.height / 16.0F), this.posZ, 4.0F, true);
+        this.world.createExplosion(this, this.posX, this.posY + (double)(this.height / 16.0F), this.posZ, 8.0F, false);
     }
 }
