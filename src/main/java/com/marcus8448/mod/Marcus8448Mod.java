@@ -64,8 +64,10 @@ public class Marcus8448Mod {
     @EventHandler
        public void preInit(FMLPreInitializationEvent event)
     {
-        File directory = event.getModConfigurationDirectory();
-        config = new Configuration(new File(directory.getPath(), "marcus8448mod.cfg"));
+        File dir = event.getModConfigurationDirectory();
+        String configDirectory = dir.getAbsolutePath() + File.separatorChar +"marcus8448" + File.separatorChar;
+        
+        config = new Configuration(new File(configDirectory, "marcus8448mod.cfg"));
         Config.readConfig();
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
         proxy.preInit(event);

@@ -32,7 +32,7 @@ public class Config {
 
     private static void initGeneralConfig(Configuration cfg) {
         cfg.addCustomCategoryComment(CATEGORY_GENERAL, "General configuration");
-        doYouLikeThisMod = cfg.getBoolean("awesomeMod", CATEGORY_GENERAL, doYouLikeThisMod, "Set to false if you don't like this mod");
+        doYouLikeThisMod = cfg.getBoolean("awesomeMod", CATEGORY_GENERAL, doYouLikeThisMod, "Set to true if you like this mod");
         sendMessageOnStartup = cfg.getBoolean("startupMessage", CATEGORY_GENERAL, sendMessageOnStartup, "Set to false if you don't want a message when you join your world");
      
     }

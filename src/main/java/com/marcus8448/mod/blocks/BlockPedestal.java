@@ -34,7 +34,7 @@ public class BlockPedestal extends BlockTileEntity<TileEntityPedestal> {
 	private static String Owner;
 	public BlockPedestal(String name, Material mat) {
 		super(mat, name);
-		MMBlocks.BLOCKS.add(this);
+		//MMBlocks.BLOCKS.add(this);
 		this.setCreativeTab(Marcus8448Mod.marcus8448TabBlocks);
 		
 	}
