@@ -20,7 +20,7 @@
             "trigger": "minecraft:summoned_entity",
             "conditions": {
                 "entity": {
-                    "type": "snowman"
+                    "type": "minecraft:snowman"
                 }
             }
         }

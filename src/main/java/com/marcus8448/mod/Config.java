@@ -15,7 +15,6 @@ public class Config {
 
     public static boolean doYouLikeThisMod = true;
     public static boolean sendMessageOnStartup = true;
-
     public static void readConfig() {
         Configuration cfg = Marcus8448Mod.config;
         try {

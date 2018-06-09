@@ -3,7 +3,6 @@ import java.util.ArrayList;
 import java.util.List;
 
 import com.marcus8448.mod.Marcus8448Mod;
-import com.marcus8448.mod.items.ItemBlueSlimeball;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemFood;
 import net.minecraft.item.ItemSeeds;
@@ -32,5 +31,5 @@ public class MMItems {
 	public static final ItemFood CORN = new ItemCorn("corn", 4, 1.5F, false);
 	public static final ItemSeeds CORN_SEED = new ItemCornSeed("corn_seed");
 	public static final Item COLD_STEEL = new ItemColdSteel("cold_steel");
-	public static final ItemSword XL_REACH_GLASS_SWORD = new XLGlassSword("xl_glass_sword", Marcus8448Mod.GLASS);
+	public static final Item THROWABLE_TNT = new ItemThrowableTNT("throwable_tnt");
 }

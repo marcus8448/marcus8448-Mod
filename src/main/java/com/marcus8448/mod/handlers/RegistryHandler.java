@@ -57,42 +57,6 @@ public class RegistryHandler {
 	
 	@SubscribeEvent
 	public static void onBiomeRegister(RegistryEvent.Register<Biome> Event) {
-/*			Event.getRegistry().register(MarcusModBiomes.MARCUS_BIOME);
-        
-			BiomeManager.addBiome(BiomeType.COOL, MarcusModBiomes.biomeEntryMarcusBiome);
-			ForgeRegistries.BIOMES.register(MarcusModBiomes.MARCUS_BIOME);
-			BiomeDictionary.addTypes(MarcusModBiomes.MARCUS_BIOME, Type.MAGICAL);
-			BiomeDictionary.addTypes(MarcusModBiomes.MARCUS_BIOME, Type.COOL);
-			MarcusModBiomes.MARCUS_BIOME.decorator.bigMushroomsPerChunk = 2;
-			System.out.println(BiomeProvider.allowedBiomes);
-	        //BiomeProvider.allowedBiomes.clear();
-	        BiomeProvider.allowedBiomes.add(MarcusModBiomes.MARCUS_BIOME);
-	        System.out.println(BiomeProvider.allowedBiomes);
-	        BiomeManager.addVillageBiome(MarcusModBiomes.MARCUS_BIOME, true);
-	        System.out.println(MapGenVillage.VILLAGE_SPAWN_BIOMES);
-	      //  BiomeManager.strongHoldBiomes.clear();
-	        BiomeManager.strongHoldBiomes.add(MarcusModBiomes.MARCUS_BIOME);
-	        System.out.println(BiomeManager.strongHoldBiomes);
-			BiomeDictionary.addTypes(MarcusModBiomes.MARCUS_BIOME, Type.MAGICAL);
-		//OLD ABOVE
-		BiomeManager.addBiome(BiomeType.COOL, MarcusModBiomes.biomeEntryMarcusBiome);
-		BiomeManager.addStrongholdBiome(MarcusModBiomes.MARCUS_BIOME);
-		BiomeManager.addSpawnBiome(MarcusModBiomes.MARCUS_BIOME);
-		BiomeManager.addVillageBiome(MarcusModBiomes.MARCUS_BIOME, true);
-		//Event.getRegistry().registerAll(MarcusModBiomes.BIOMES.toArray((new Biome[0])));
-		  //STUFF
-			Event.getRegistry().register(MarcusModBiomes.MARCUS_BIOME);	
-			BiomeManager.addBiome(BiomeType.COOL, MarcusModBiomes.biomeEntryMarcusBiome);
-			System.out.println(BiomeProvider.allowedBiomes);
-	        BiomeProvider.allowedBiomes.add(MarcusModBiomes.MARCUS_BIOME);
-	        System.out.println(BiomeProvider.allowedBiomes);
-	        BiomeManager.addVillageBiome(MarcusModBiomes.MARCUS_BIOME, true);
-	        System.out.println(MapGenVillage.VILLAGE_SPAWN_BIOMES);
-	        BiomeManager.strongHoldBiomes.add(MarcusModBiomes.MARCUS_BIOME);
-	        System.out.println(BiomeManager.strongHoldBiomes);
-			BiomeDictionary.addTypes(MarcusModBiomes.MARCUS_BIOME, Type.MAGICAL);
-		*/
-
 		Event.getRegistry().register(MMBiomes.MARCUS_BIOME);
         
 			BiomeManager.addBiome(BiomeType.COOL, MMBiomes.biomeEntryMarcusBiome);
@@ -109,9 +73,7 @@ public class RegistryHandler {
 	        System.out.println(BiomeManager.strongHoldBiomes);
 			BiomeDictionary.addTypes(MMBiomes.MARCUS_BIOME, Type.MAGICAL);
 		
-	}
-	
-	
+	}	
 	
 	@SubscribeEvent
 	public static void onModelRegister(ModelRegistryEvent Event) {

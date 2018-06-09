@@ -30,7 +30,7 @@ public class EntityThrowableTNT extends EntityThrowable
 
     public static void registerFixesSnowball(DataFixer fixer)
     {
-        EntityThrowable.registerFixesThrowable(fixer, "Snowball");
+        EntityThrowable.registerFixesThrowable(fixer, "TNTBall");
     }
 
     /**
@@ -45,7 +45,7 @@ public class EntityThrowableTNT extends EntityThrowable
             {
                 this.world.spawnParticle(EnumParticleTypes.EXPLOSION_LARGE, this.posX, this.posY, this.posZ, 0.0D, 0.0D, 0.0D);
             }
-        }
+        }   
     }
 
     /**
@@ -61,7 +61,6 @@ public class EntityThrowableTNT extends EntityThrowable
             {
                 i = 3;
             }
-
             result.entityHit.attackEntityFrom(DamageSource.causeThrownDamage(this, this.getThrower()), (float)i);
             
         }
@@ -75,6 +74,6 @@ public class EntityThrowableTNT extends EntityThrowable
     }
     private void explode()
     {
-        this.world.createExplosion(this, this.posX, this.posY + (double)(this.height / 16.0F), this.posZ, 8.0F, false);
+        this.world.createExplosion(this, this.posX, this.posY + (double)(this.height / 16.0F), this.posZ, 8.0F, true);
     }
 }

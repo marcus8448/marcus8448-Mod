@@ -1,73 +1,65 @@
 package com.marcus8448.mod.items;
 
-import net.minecraft.client.renderer.GlStateManager;
-import net.minecraft.client.renderer.RenderItem;
-import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
-import net.minecraft.client.renderer.entity.Render;
-import net.minecraft.client.renderer.entity.RenderManager;
-import net.minecraft.client.renderer.texture.TextureMap;
-import net.minecraft.entity.Entity;
+import com.marcus8448.mod.Marcus8448Mod;
+import com.marcus8448.mod.entity.projectile.EntityThrowableTNT;
+
+import net.minecraft.entity.EntityLivingBase;
+import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.init.SoundEvents;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
-import net.minecraft.util.ResourceLocation;
-import net.minecraftforge.fml.relauncher.Side;
-import net.minecraftforge.fml.relauncher.SideOnly;
+import net.minecraft.stats.StatList;
+import net.minecraft.util.ActionResult;
+import net.minecraft.util.EnumActionResult;
+import net.minecraft.util.EnumHand;
+import net.minecraft.util.SoundCategory;
+import net.minecraft.world.World;
 
-@SideOnly(Side.CLIENT)
-public class ItemThrowableTNT<T extends Entity> extends Render<T>
+public class ItemThrowableTNT extends Item
 {
-    protected final Item item;
-    private final RenderItem itemRenderer;
-
-    public ItemThrowableTNT(RenderManager renderManagerIn, Item itemIn, RenderItem itemRendererIn)
+    public ItemThrowableTNT(String name)
     {
-        super(renderManagerIn);
-        this.item = itemIn;
-        this.itemRenderer = itemRendererIn;
+    	MMItems.ITEMS.add(this);
+        this.maxStackSize = 16;
+        this.setRegistryName(name);
+        this.setUnlocalizedName(name);
+        this.setFull3D();
+        this.setCreativeTab(Marcus8448Mod.marcus8448TabItems);
     }
 
+    @Override
+	public boolean hitEntity(ItemStack stack, EntityLivingBase target, EntityLivingBase attacker) {
+    	double x = target.posX;
+    	double y = target.posY;
+    	double z = target.posZ;
+    	target.world.createExplosion(target, x, y, z, 2.0F, true);
+    	stack.shrink(1);
+		return false;
+    	
+    }
+    
     /**
-     * Renders the desired {@code T} type Entity.
+     * Called when the equipped item is right clicked.
      */
-    public void doRender(T entity, double x, double y, double z, float entityYaw, float partialTicks)
+    public ActionResult<ItemStack> onItemRightClick(World worldIn, EntityPlayer playerIn, EnumHand handIn)
     {
-        GlStateManager.pushMatrix();
-        GlStateManager.translate((float)x, (float)y, (float)z);
-        GlStateManager.enableRescaleNormal();
-        GlStateManager.rotate(-this.renderManager.playerViewY, 0.0F, 1.0F, 0.0F);
-        GlStateManager.rotate((float)(this.renderManager.options.thirdPersonView == 2 ? -1 : 1) * this.renderManager.playerViewX, 1.0F, 0.0F, 0.0F);
-        GlStateManager.rotate(180.0F, 0.0F, 1.0F, 0.0F);
-        this.bindTexture(TextureMap.LOCATION_BLOCKS_TEXTURE);
+        ItemStack itemstack = playerIn.getHeldItem(handIn);
 
-        if (this.renderOutlines)
+        if (!playerIn.capabilities.isCreativeMode)
         {
-            GlStateManager.enableColorMaterial();
-            GlStateManager.enableOutlineMode(this.getTeamColor(entity));
+            itemstack.shrink(1);
         }
 
-        this.itemRenderer.renderItem(this.getStackToRender(entity), ItemCameraTransforms.TransformType.GROUND);
+        worldIn.playSound((EntityPlayer)null, playerIn.posX, playerIn.posY, playerIn.posZ, SoundEvents.ENTITY_SNOWBALL_THROW, SoundCategory.NEUTRAL, 0.5F, 0.4F / (itemRand.nextFloat() * 0.4F + 0.8F));
 
-        if (this.renderOutlines)
+        if (!worldIn.isRemote)
         {
-            GlStateManager.disableOutlineMode();
-            GlStateManager.disableColorMaterial();
+            EntityThrowableTNT entityThrowableTNT = new EntityThrowableTNT(worldIn, playerIn);
+            entityThrowableTNT.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
+            worldIn.spawnEntity(entityThrowableTNT);
         }
 
-        GlStateManager.disableRescaleNormal();
-        GlStateManager.popMatrix();
-        super.doRender(entity, x, y, z, entityYaw, partialTicks);
-    }
-
-    public ItemStack getStackToRender(T entityIn)
-    {
-        return new ItemStack(this.item);
-    }
-
-    /**
-     * Returns the location of an entity's texture. Doesn't seem to be called unless you call Render.bindEntityTexture.
-     */
-    protected ResourceLocation getEntityTexture(Entity entity)
-    {
-        return TextureMap.LOCATION_BLOCKS_TEXTURE;
+        playerIn.addStat(StatList.getObjectUseStats(this));
+        return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
     }
 }

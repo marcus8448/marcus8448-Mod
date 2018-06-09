@@ -5,6 +5,7 @@ import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.item.EntityItem;
 import net.minecraft.entity.player.EntityPlayer;
+import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
 import net.minecraft.nbt.CompressedStreamTools;
 import net.minecraft.nbt.NBTTagCompound;
@@ -114,6 +115,11 @@ public class BlockPedestal extends BlockTileEntity<TileEntityPedestal> {
 	@Override
 	public TileEntityPedestal createTileEntity(World world, IBlockState state) {
 		return new TileEntityPedestal();
+	}
+	
+	@Override
+	public void registerModels() {
+		Marcus8448Mod.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "");
 	}
 
 }
