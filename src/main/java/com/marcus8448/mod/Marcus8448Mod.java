@@ -2,17 +2,22 @@ package com.marcus8448.mod;
 
 import java.io.File;
 
-import com.marcus8448.mod.handlers.GuiHandler;
-import com.marcus8448.mod.handlers.MMEventHandler;
+import com.marcus8448.mod.handlers.*;
+import com.marcus8448.mod.items.ItemThrowableTNT;
+import com.marcus8448.mod.items.MMItems;
 import com.marcus8448.mod.proxy.CommonProxy;
-import com.marcus8448.mod.tabs.TabMarcus8448Blocks;
-import com.marcus8448.mod.tabs.TabMarcus8448Items;
-import com.marcus8448.mod.utils.Constants;
-import com.marcus8448.mod.utils.Logger;
+import com.marcus8448.mod.tabs.*;
+import com.marcus8448.mod.utils.*;
+import com.marcus8448.mod.entity.projectile.*;
 
+import net.minecraft.block.BlockDispenser;
 import net.minecraft.creativetab.CreativeTabs;
+import net.minecraft.dispenser.IPosition;
+import net.minecraft.entity.IProjectile;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraft.item.Item.ToolMaterial;
+import net.minecraft.item.ItemStack;
+import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.fml.common.Mod;
@@ -52,6 +57,7 @@ public class Marcus8448Mod {
      * @since 1.12.2-1.0.0_preAlpha3
      */
     public static CreativeTabs marcus8448TabItems = new TabMarcus8448Items();
+    
     /**
      * Blocks tab
      * @author marcus8448
@@ -84,10 +90,17 @@ public class Marcus8448Mod {
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
        {
-        
-        Logger.getLogger().info("marcus8448's Mod is (finally) Post-Initilizing!");
+    	 BlockDispenser.DISPENSE_BEHAVIOR_REGISTRY.putObject(MMItems.THROWABLE_TNT, new BehaviorProjectileDispense()
+         {
+             protected IProjectile getProjectileEntity(World worldIn, IPosition position, ItemStack stackIn)
+             {
+                 EntityThrowableTNT entityThrowableTNT = new EntityThrowableTNT(worldIn, position.getX(), position.getY(), position.getZ());
+                 return entityThrowableTNT;
+             }
+         });
+    	Logger.getLogger().info("marcus8448's Mod is Post-Initilizing!");
         if (Config.doYouLikeThisMod == false) {
-            Logger.getLogger().error("Pleae give feedback on why you don't like this ;-;");
+            Logger.getLogger().error("Pleae give feedback on why you don't like this mod (;-;)");
         }
 
      }
