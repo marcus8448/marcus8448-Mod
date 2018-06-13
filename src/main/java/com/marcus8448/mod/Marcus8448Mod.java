@@ -17,9 +17,12 @@ import net.minecraft.entity.IProjectile;
 import net.minecraftforge.common.util.EnumHelper;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
+import net.minecraft.util.ResourceLocation;
 import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
+import net.minecraftforge.fml.client.registry.IRenderFactory;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -28,11 +31,11 @@ import net.minecraftforge.fml.common.event.FMLInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
+import net.minecraftforge.fml.common.registry.EntityRegistry;
 
 
 /**
- * 
- * https://marcus8448.com/mods/marcus8448-mod/
+ * {@link marcus8448.github.io/mods/marcus8448-mod}
  * @author marcus8448
  *  
  */
@@ -53,7 +56,6 @@ public class Marcus8448Mod {
     /**
      * Items tab
      * @author marcus8448
-     * @see TabMarcus8448Items
      * @since 1.12.2-1.0.0_preAlpha3
      */
     public static CreativeTabs marcus8448TabItems = new TabMarcus8448Items();
@@ -61,7 +63,6 @@ public class Marcus8448Mod {
     /**
      * Blocks tab
      * @author marcus8448
-     * @see TabMarcus8448Blocks
      * @since 1.12.2-1.0.0_preAlpha3
      */
     public static CreativeTabs marcus8448TabBlocks = new TabMarcus8448Blocks();
@@ -84,7 +85,8 @@ public class Marcus8448Mod {
     public void init(FMLInitializationEvent event)
     {    
         MinecraftForge.EVENT_BUS.register(new MMEventHandler());
-        
+        int id = 1;
+        EntityRegistry.registerModEntity(new ResourceLocation("marcus8448mod:throwable_tnt"), EntityThrowableTNT.class, "ThrowableTnt", id++, Marcus8448Mod.instance, 64, 3, true, 0x996600, 0x00ff00);
     }
     
     @EventHandler

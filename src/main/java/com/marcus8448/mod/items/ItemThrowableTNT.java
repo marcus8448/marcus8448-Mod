@@ -2,6 +2,7 @@ package com.marcus8448.mod.items;
 
 import com.marcus8448.mod.Marcus8448Mod;
 import com.marcus8448.mod.entity.projectile.EntityThrowableTNT;
+import com.marcus8448.mod.utils.IHasModel;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -15,7 +16,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
-public class ItemThrowableTNT extends Item
+public class ItemThrowableTNT extends Item implements IHasModel  
 {
     public ItemThrowableTNT(String name)
     {
@@ -55,11 +56,15 @@ public class ItemThrowableTNT extends Item
         if (!worldIn.isRemote)
         {
             EntityThrowableTNT entityThrowableTNT = new EntityThrowableTNT(worldIn, playerIn);
-            entityThrowableTNT.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 1.5F, 1.0F);
+            entityThrowableTNT.shoot(playerIn, playerIn.rotationPitch, playerIn.rotationYaw, 0.0F, 3.5F, 1.0F);
             worldIn.spawnEntity(entityThrowableTNT);
         }
 
         playerIn.addStat(StatList.getObjectUseStats(this));
         return new ActionResult<ItemStack>(EnumActionResult.SUCCESS, itemstack);
     }
+	@Override
+	public void registerModels() {
+		Marcus8448Mod.proxy.registerItemRenderer(this, 0, "");
+	}
 }
