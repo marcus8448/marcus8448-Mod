@@ -1,6 +1,7 @@
 package com.marcus8448.mod;
 
 import net.minecraftforge.common.config.Configuration;
+
 import com.marcus8448.mod.utils.Logger;
 
 /**
@@ -15,6 +16,7 @@ public class Config {
 
     public static boolean doYouLikeThisMod = true;
     public static boolean sendMessageOnStartup = true;
+
     public static void readConfig() {
         Configuration cfg = Marcus8448Mod.config;
         try {
@@ -31,8 +33,10 @@ public class Config {
 
     private static void initGeneralConfig(Configuration cfg) {
         cfg.addCustomCategoryComment(CATEGORY_GENERAL, "General configuration");
-        doYouLikeThisMod = cfg.getBoolean("awesomeMod", CATEGORY_GENERAL, doYouLikeThisMod, "Set to true if you like this mod");
-        sendMessageOnStartup = cfg.getBoolean("startupMessage", CATEGORY_GENERAL, sendMessageOnStartup, "Set to false if you don't want a message when you join your world");
-     
+        doYouLikeThisMod = cfg.getBoolean("awesomeMod", CATEGORY_GENERAL, doYouLikeThisMod,
+                "Set to true if you like this mod");
+        sendMessageOnStartup = cfg.getBoolean("startupMessage", CATEGORY_GENERAL, sendMessageOnStartup,
+                "Set to false if you don't want a message when you join your world");
+
     }
 }

@@ -1,13 +1,13 @@
 package com.marcus8448.mod.blocks;
 
-import com.marcus8448.mod.utils.Constants;
-
 import net.minecraft.client.gui.inventory.GuiContainer;
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.resources.I18n;
 import net.minecraft.entity.player.InventoryPlayer;
 import net.minecraft.inventory.Container;
 import net.minecraft.util.ResourceLocation;
+
+import com.marcus8448.mod.utils.Constants;
 
 /**
  * 
@@ -17,8 +17,9 @@ import net.minecraft.util.ResourceLocation;
  */
 public class GuiPedestal extends GuiContainer {
     private InventoryPlayer playerInv;
-    private static final ResourceLocation BG_TEXTURE = new ResourceLocation(Constants.MODID, "textures/gui/pedestal.png");
-    
+    private static final ResourceLocation BG_TEXTURE = new ResourceLocation(Constants.MODID,
+            "textures/gui/pedestal.png");
+
     public GuiPedestal(Container container, InventoryPlayer playerInv) {
         super(container);
         this.playerInv = playerInv;
@@ -32,7 +33,7 @@ public class GuiPedestal extends GuiContainer {
         int y = (height - ySize) / 2;
         drawTexturedModalRect(x, y, 0, 0, xSize, ySize);
     }
-    
+
     @Override
     protected void drawGuiContainerForegroundLayer(int mouseX, int mouseY) {
         String name = I18n.format(MMBlocks.PEDESTAL.getUnlocalizedName() + ".name");

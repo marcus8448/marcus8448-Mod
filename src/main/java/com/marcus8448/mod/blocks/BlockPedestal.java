@@ -1,5 +1,7 @@
 package com.marcus8448.mod.blocks;
 
+import javax.annotation.Nullable;
+
 import net.minecraft.block.material.Material;
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
@@ -12,10 +14,9 @@ import net.minecraft.util.EnumFacing;
 import net.minecraft.util.EnumHand;
 import net.minecraft.util.math.BlockPos;
 import net.minecraft.world.World;
+
 import net.minecraftforge.items.CapabilityItemHandler;
 import net.minecraftforge.items.IItemHandler;
-
-import javax.annotation.Nullable;
 
 import com.marcus8448.mod.Marcus8448Mod;
 import com.marcus8448.mod.handlers.GuiHandler;
@@ -30,11 +31,12 @@ public class BlockPedestal extends BlockTileEntity<TileEntityPedestal> {
 
     NBTTagCompound ownerNBT = new NBTTagCompound();
     protected static String Owner;
+
     public BlockPedestal(String name, Material mat) {
         super(mat, name);
-        //MMBlocks.BLOCKS.add(this);
+        // MMBlocks.BLOCKS.add(this);
         this.setCreativeTab(Marcus8448Mod.marcus8448TabBlocks);
-        
+
     }
 
     @Override
@@ -50,33 +52,36 @@ public class BlockPedestal extends BlockTileEntity<TileEntityPedestal> {
     }
 
     @Override
-    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand, EnumFacing side, float hitX, float hitY, float hitZ) {
+    public boolean onBlockActivated(World world, BlockPos pos, IBlockState state, EntityPlayer player, EnumHand hand,
+            EnumFacing side, float hitX, float hitY, float hitZ) {
         if (!world.isRemote) {
             player.getName();
-             if (!player.isSneaking()) {
-                 String playerS = player.getName();
-                 System.out.println(playerS);
-                 System.out.println(ownerNBT.getString("owner"));
-                 if (playerS == ownerNBT.getString("owner")) {  
-                 player.openGui(Marcus8448Mod.instance, GuiHandler.PEDESTAL, world, pos.getX(), pos.getY(), pos.getZ());
-                 }
-              } else {
-                  
-              }
-          }
-          return true;
+            if (!player.isSneaking()) {
+                String playerS = player.getName();
+                System.out.println(playerS);
+                System.out.println(ownerNBT.getString("owner"));
+                if (playerS == ownerNBT.getString("owner")) {
+                    player.openGui(Marcus8448Mod.instance, GuiHandler.PEDESTAL, world, pos.getX(), pos.getY(),
+                            pos.getZ());
+                }
+            } else {
+
+            }
+        }
+        return true;
 
     }
 
     @Override
-    public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer, ItemStack stack) {
+    public void onBlockPlacedBy(World worldIn, BlockPos pos, IBlockState state, EntityLivingBase placer,
+            ItemStack stack) {
         Owner = placer.getName();
         System.out.println(Owner);
         ownerNBT.setString("owner", Owner);
         NBTTagCompound nbt = new NBTTagCompound();
-        stack.writeToNBT(nbt);        
+        stack.writeToNBT(nbt);
     }
-    
+
     @Override
     public void breakBlock(World world, BlockPos pos, IBlockState state) {
         TileEntityPedestal tile = getTileEntity(world, pos);
@@ -104,7 +109,7 @@ public class BlockPedestal extends BlockTileEntity<TileEntityPedestal> {
     public TileEntityPedestal createTileEntity(World world, IBlockState state) {
         return new TileEntityPedestal();
     }
-    
+
     @Override
     public void registerModels() {
         Marcus8448Mod.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0, "");

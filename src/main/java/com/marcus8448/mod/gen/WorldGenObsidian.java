@@ -14,15 +14,15 @@ import net.minecraft.world.gen.feature.WorldGenerator;
  *
  */
 public class WorldGenObsidian extends WorldGenerator {
-    
-    public boolean generate(World worldIn, Random rand, BlockPos position)
-    {
-        for (int i = 0; i < 64; ++i)
-        {
-            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4), rand.nextInt(8) - rand.nextInt(8));
 
-            if (Blocks.OBSIDIAN.canPlaceBlockAt(worldIn, blockpos) && worldIn.getBlockState(blockpos.down()).getBlock() == Blocks.GRASS)
-            {
+    @Override
+    public boolean generate(World worldIn, Random rand, BlockPos position) {
+        for (int i = 0; i < 64; ++i) {
+            BlockPos blockpos = position.add(rand.nextInt(8) - rand.nextInt(8), rand.nextInt(4) - rand.nextInt(4),
+                    rand.nextInt(8) - rand.nextInt(8));
+
+            if (Blocks.OBSIDIAN.canPlaceBlockAt(worldIn, blockpos)
+                    && worldIn.getBlockState(blockpos.down()).getBlock() == Blocks.GRASS) {
                 worldIn.setBlockState(blockpos, Blocks.OBSIDIAN.getDefaultState(), 1);
             }
         }

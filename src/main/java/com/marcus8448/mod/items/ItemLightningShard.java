@@ -1,11 +1,12 @@
 package com.marcus8448.mod.items;
 
-import com.marcus8448.mod.Marcus8448Mod;
-import com.marcus8448.mod.utils.IHaveModel;
-
 import net.minecraft.item.Item;
+
 import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
+
+import com.marcus8448.mod.Marcus8448Mod;
+import com.marcus8448.mod.utils.IHaveModel;
 
 /**
  * 
@@ -14,26 +15,24 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  *
  */
 public class ItemLightningShard extends Item implements IHaveModel {
- 
+
     public ItemLightningShard(String name) {
-        this.setRegistryName(name);     
+        this.setRegistryName(name);
         this.setUnlocalizedName(name);
-        this.setCreativeTab(Marcus8448Mod.marcus8448TabItems);  
+        this.setCreativeTab(Marcus8448Mod.marcus8448TabItems);
         MMItems.ITEMS.add(this);
 
     }
-    
-    
+
+    @Override
     @SideOnly(Side.CLIENT)
-    public boolean isFull3D()
-    {
+    public boolean isFull3D() {
         return true;
     }
-    
+
     @Override
     public void registerModels() {
-        Marcus8448Mod.proxy.registerItemRenderer(this, 0, "");    
+        Marcus8448Mod.proxy.registerItemRenderer(this, 0, "");
     }
-    
- 
+
 }

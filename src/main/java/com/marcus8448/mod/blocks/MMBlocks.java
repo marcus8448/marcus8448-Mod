@@ -7,8 +7,6 @@ import net.minecraft.block.Block;
 import net.minecraft.block.BlockCrops;
 import net.minecraft.block.material.Material;
 
-import com.marcus8448.mod.blocks.BlockColouredPlanks;
-
 /**
  * 
  * @author marcus8448
@@ -16,9 +14,9 @@ import com.marcus8448.mod.blocks.BlockColouredPlanks;
  *
  */
 public class MMBlocks {
-    
+
     public static final List<Block> BLOCKS = new ArrayList<Block>();
-    
+
     public static final Block BLUE_SLIME_BLOCK = new BlockBlueSlime("blue_slime_block", Material.CLAY);
     public static final Block WHITE_OAK_PLANKS = new BlockColouredPlanks("white_oak_planks", Material.WOOD);
     public static final Block ORANGE_OAK_PLANKS = new BlockColouredPlanks("orange_oak_planks", Material.WOOD);
