@@ -3,7 +3,7 @@ A random mod for minecraft
 
 Modpacks
 ----------------------
-You may put this mod in any modpack as long as you DO NOT make any money off it (but ad.fly links are fair enough)
+You may put this mod in any modpack as long as you DO NOT make any money off it (with the exception of link shorteners like "ad.fly")
 
 Media
 ------------
