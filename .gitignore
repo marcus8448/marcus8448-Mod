@@ -1,17 +1,19 @@
 #Eclipse
-/bin/*
-/conf/*
-/docs/*
-/eclipse/*
-/forge/*
-/jars/*
-/lib/*
-/logs/*
-/reobf/*
-/run/*
-/runtime/*
-/temp/*
-/temporary/*
+bin/*
+conf/*
+docs/*
+eclipse/*
+forge/*
+jars/*
+lib/*
+logs/*
+reobf/*
+run/*
+runtime/*
+temp/*
+temporary/*
+doc/*
+build/*
 
 *.sh
 .project
@@ -27,6 +29,7 @@ local.properties
 .settings/
 .loadpath
 .gradle/
+.class
 
 # Eclipse launch configs
 *.launch
@@ -64,3 +67,8 @@ gradlew
 
 #Minecraft Logs
 *.log.gz
+
+Forge_14.23.2.2611-Changelog.txt
+*.zip
+*.jar
+*.css
