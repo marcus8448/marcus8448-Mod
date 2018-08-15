@@ -77,7 +77,6 @@ public class Marcus8448Mod {
         config = new Configuration(new File(configDirectory, "marcus8448mod.cfg"));
         Config.readConfig();
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
-        proxy.preInit(event);
         
     }
     
