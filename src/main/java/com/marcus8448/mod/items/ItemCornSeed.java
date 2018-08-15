@@ -2,7 +2,7 @@ package com.marcus8448.mod.items;
 
 import com.marcus8448.mod.Marcus8448Mod;
 import com.marcus8448.mod.blocks.MMBlocks;
-import com.marcus8448.mod.utils.IHasModel;
+import com.marcus8448.mod.utils.IHaveModel;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.state.IBlockState;
@@ -21,7 +21,7 @@ import net.minecraft.world.World;
  * @since 1.12.2-1.0.0_preAlpha2
  *
  */
-public class ItemCornSeed extends ItemSeeds implements IHasModel {
+public class ItemCornSeed extends ItemSeeds implements IHaveModel {
 
 	
 	public ItemCornSeed(String name) {

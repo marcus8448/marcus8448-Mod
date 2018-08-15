@@ -1,7 +1,7 @@
 package com.marcus8448.mod.items;
 
 import com.marcus8448.mod.Marcus8448Mod;
-import com.marcus8448.mod.utils.IHasModel;
+import com.marcus8448.mod.utils.IHaveModel;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.entity.EntityLivingBase;
@@ -18,7 +18,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * @since 1.12.2-1.0.0_preAlpha3
  *
  */
-public class ItemCompressedObsidianSword extends ItemSword implements IHasModel {
+public class ItemCompressedObsidianSword extends ItemSword implements IHaveModel {
  
     public ItemCompressedObsidianSword(String name, ToolMaterial material) {
         super(material);

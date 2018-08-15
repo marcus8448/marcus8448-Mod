@@ -21,22 +21,22 @@ import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
  */
 public class MMEventHandler {
 
-	/**
-	 * Send a message when entity joins world
-	 * @author marcus8448
-	 * @see EntityJoinWorldEvent
-	 * @param event
-	 */
-	@SubscribeEvent
+    /**
+     * Send a message when entity joins world
+     * @author marcus8448
+     * @see EntityJoinWorldEvent
+     * @param event
+     */
+    @SubscribeEvent
     public void joinWorld(EntityJoinWorldEvent event) {
-		Entity entity = event.getEntity();
-		if (entity instanceof EntityPlayerMP) {
-			EntityPlayerMP playerMP = (EntityPlayerMP) entity;
-			if (Config.sendMessageOnStartup) {
-				TextComponentString message = new TextComponentString("§9Thank you for installing §lMarcus' Mod§9 for " + Constants.MCV + ". Go to§6 ");
-				
-				//playerMP.sendMessage(new TextComponentString("§9Thank you for installing §lMarcus' Mod§9 for " + Constants.MCV + ". Go to§6 https://github.com/marcus8448/Marcus8448-Mod/issues/ §9to submit an §c§lissue§9 if you find one."));
-				ITextComponent componentIssueLink = new TextComponentString("https://github.com/marcus8448/Marcus8448-Mod/issues/");
+        Entity entity = event.getEntity();
+        if (entity instanceof EntityPlayerMP) {
+            EntityPlayerMP playerMP = (EntityPlayerMP) entity;
+            if (Config.sendMessageOnStartup) {
+                TextComponentString message = new TextComponentString("§9Thank you for installing §lMarcus' Mod§9 for " + Constants.MCV + ". Go to§6 ");
+                
+                //playerMP.sendMessage(new TextComponentString("§9Thank you for installing §lMarcus' Mod§9 for " + Constants.MCV + ". Go to§6 https://github.com/marcus8448/Marcus8448-Mod/issues/ §9to submit an §c§lissue§9 if you find one."));
+                ITextComponent componentIssueLink = new TextComponentString("https://github.com/marcus8448/Marcus8448-Mod/issues/");
                 Style styleLink = new Style();
                 styleLink.setUnderlined(Boolean.TRUE);
                 styleLink.setColor(TextFormatting.GOLD);
@@ -47,8 +47,8 @@ public class MMEventHandler {
                 message.appendSibling(after);
                 playerMP.sendMessage(message);
                 
-			}
-		}
-	}
+            }
+        }
+    }
 }
 

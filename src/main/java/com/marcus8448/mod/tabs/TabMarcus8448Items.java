@@ -13,16 +13,16 @@ import net.minecraft.item.ItemStack;
  *
  */
 public class TabMarcus8448Items extends CreativeTabs {
-	public TabMarcus8448Items() {
-		super("tab_marcus8448_items");
-		this.setBackgroundImageName("marcus8448_no_scroll.png");
-		this.setNoScrollbar();
-	}
-	
-	@Override
-	public ItemStack getTabIconItem() {
-		return new ItemStack(MMItems.BLUE_BOOK);
-	}
+    public TabMarcus8448Items() {
+        super("tab_marcus8448_items");
+        this.setBackgroundImageName("marcus8448_no_scroll.png");
+        this.setNoScrollbar();
+    }
+    
+    @Override
+    public ItemStack getTabIconItem() {
+        return new ItemStack(MMItems.BLUE_BOOK);
+    }
 
 
 }

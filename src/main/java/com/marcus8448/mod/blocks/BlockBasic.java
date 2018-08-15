@@ -6,7 +6,7 @@ import org.lwjgl.input.Keyboard;
 
 import com.marcus8448.mod.Marcus8448Mod;
 import com.marcus8448.mod.items.MMItems;
-import com.marcus8448.mod.utils.IHasModel;
+import com.marcus8448.mod.utils.IHaveModel;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -23,7 +23,7 @@ import net.minecraft.world.World;
  * @since 1.12.2-1.0.0_preAlpha1
  *
  */
-public class BlockBasic extends Block implements IHasModel {
+public class BlockBasic extends Block implements IHaveModel {
 
     String name = "";
     public BlockBasic(String name, Material material) {

@@ -28,8 +28,8 @@ public class WorldGenTower extends WorldGenerator
 
     public boolean generate(World worldIn, Random rand, BlockPos position)
     {
-    	int ri = rand.nextInt(100);
-    	if (ri == 50) {
+        int ri = rand.nextInt(100);
+        if (ri == 50) {
         Random random = worldIn.getChunkFromBlockCoords(position).getRandomWithSeed(987234911L);
         MinecraftServer minecraftserver = worldIn.getMinecraftServer();
         Rotation[] arotation = Rotation.values();
@@ -58,8 +58,8 @@ public class WorldGenTower extends WorldGenerator
         baseTemplate.addBlocksToWorld(worldIn, blockpos1, placementsettings, 20);
         placementsettings.setIntegrity(0.1F);
         return true;
-    	} else {
-    		return false;
-    	}   
+        } else {
+            return false;
+        }   
     }
 }

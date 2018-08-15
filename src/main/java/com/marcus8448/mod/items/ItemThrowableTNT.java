@@ -2,7 +2,7 @@ package com.marcus8448.mod.items;
 
 import com.marcus8448.mod.Marcus8448Mod;
 import com.marcus8448.mod.entity.projectile.EntityThrowableTNT;
-import com.marcus8448.mod.utils.IHasModel;
+import com.marcus8448.mod.utils.IHaveModel;
 
 import net.minecraft.entity.EntityLivingBase;
 import net.minecraft.entity.player.EntityPlayer;
@@ -16,7 +16,7 @@ import net.minecraft.util.EnumHand;
 import net.minecraft.util.SoundCategory;
 import net.minecraft.world.World;
 
-public class ItemThrowableTNT extends Item implements IHasModel  
+public class ItemThrowableTNT extends Item implements IHaveModel  
 {
     public ItemThrowableTNT(String name)
     {

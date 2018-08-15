@@ -92,7 +92,7 @@ public class Marcus8448Mod {
     @EventHandler
     public void postInit(FMLPostInitializationEvent event)
        {
-    	 BlockDispenser.DISPENSE_BEHAVIOR_REGISTRY.putObject(MMItems.THROWABLE_TNT, new BehaviorProjectileDispense()
+         BlockDispenser.DISPENSE_BEHAVIOR_REGISTRY.putObject(MMItems.THROWABLE_TNT, new BehaviorProjectileDispense()
          {
              protected IProjectile getProjectileEntity(World worldIn, IPosition position, ItemStack stackIn)
              {
@@ -100,7 +100,7 @@ public class Marcus8448Mod {
                  return entityThrowableTNT;
              }
          });
-    	Logger.getLogger().info("marcus8448's Mod is Post-Initilizing!");
+    Logger.getLogger().info("marcus8448's Mod is Post-Initilizing!");
         if (Config.doYouLikeThisMod == false) {
             Logger.getLogger().error("Pleae give feedback on why you don't like this mod (;-;)");
         }

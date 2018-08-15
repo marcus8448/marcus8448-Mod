@@ -8,7 +8,7 @@ import org.lwjgl.input.Keyboard;
 import com.marcus8448.mod.Marcus8448Mod;
 import com.marcus8448.mod.items.MMItems;
 import com.marcus8448.mod.utils.Constants;
-import com.marcus8448.mod.utils.IHasModel;
+import com.marcus8448.mod.utils.IHaveModel;
 
 import net.minecraft.block.Block;
 import net.minecraft.block.SoundType;
@@ -31,25 +31,25 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * @since 1.12.2-1.0.0_preAlpha1
  *
  */
-public class BlockBlueSlime extends Block implements IHasModel{
+public class BlockBlueSlime extends Block implements IHaveModel{
 
-	float fd = 0;
-	String name = "";
-	public BlockBlueSlime(String name, Material material) {
-		super(material);
-		this.name = name;
-		this.setUnlocalizedName(name);
-		this.setRegistryName(name);
-		this.setCreativeTab(Marcus8448Mod.marcus8448TabBlocks);
-		this.setSoundType(SoundType.SLIME);
-		this.setHardness(0.2F);
-		this.setResistance(45F); //Very flexible jelly/Slime!
-		
-		MMBlocks.BLOCKS.add(this);
-		MMItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
-	}
-	
-	@SideOnly(Side.CLIENT)
+    float fd = 0;
+    String name = "";
+    public BlockBlueSlime(String name, Material material) {
+        super(material);
+        this.name = name;
+        this.setUnlocalizedName(name);
+        this.setRegistryName(name);
+        this.setCreativeTab(Marcus8448Mod.marcus8448TabBlocks);
+        this.setSoundType(SoundType.SLIME);
+        this.setHardness(0.2F);
+        this.setResistance(45F); //Very flexible jelly/Slime!
+        
+        MMBlocks.BLOCKS.add(this);
+        MMItems.ITEMS.add(new ItemBlock(this).setRegistryName(this.getRegistryName()));
+    }
+    
+    @SideOnly(Side.CLIENT)
     public BlockRenderLayer getBlockLayer()
     {
         return BlockRenderLayer.CUTOUT_MIPPED; // Supposed to be TRANSPARENT but causes a bug.
@@ -66,12 +66,12 @@ public class BlockBlueSlime extends Block implements IHasModel{
         }
         else
         {
-        	
-        	Random rjump = new Random();
-        	double  n = rjump.nextDouble() + 1;
-        	entityIn.motionY = entityIn.motionY + n;
-        	@SuppressWarnings("unused")
-			Double jump = entityIn.motionY + 3.0D;
+            
+            Random rjump = new Random();
+            double  n = rjump.nextDouble() + 1;
+            entityIn.motionY = entityIn.motionY + n;
+            @SuppressWarnings("unused")
+            Double jump = entityIn.motionY + 3.0D;
             entityIn.fall(fallDistance, 0.0F);
             entityIn.motionY = n;
             System.out.println(entityIn.motionY);
@@ -119,20 +119,20 @@ public class BlockBlueSlime extends Block implements IHasModel{
         super.onEntityWalk(worldIn, pos, entityIn);
     }
     
-	@Override
-	public void addInformation(ItemStack itemStack, World worldIn, List<String> list, ITooltipFlag flag) {
-		if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
-			list.add("Woah super bouncy!");
-		} else {
-			list.add("Press SHIFT for more info");
-		}
-		super.addInformation(itemStack, worldIn, list, flag);
-	}
+    @Override
+    public void addInformation(ItemStack itemStack, World worldIn, List<String> list, ITooltipFlag flag) {
+        if (Keyboard.isKeyDown(Keyboard.KEY_LSHIFT)) {
+            list.add("Woah super bouncy!");
+        } else {
+            list.add("Press SHIFT for more info");
+        }
+        super.addInformation(itemStack, worldIn, list, flag);
+    }
     
 
-	@Override
-	public void registerModels() {
-		Marcus8448Mod.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0,  Constants.MODID + ":" + name);
-	}
+    @Override
+    public void registerModels() {
+        Marcus8448Mod.proxy.registerItemRenderer(Item.getItemFromBlock(this), 0,  Constants.MODID + ":" + name);
+    }
 
 }

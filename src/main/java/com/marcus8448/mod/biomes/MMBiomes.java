@@ -11,8 +11,8 @@ import net.minecraftforge.common.BiomeManager.BiomeEntry;
  *
  */
 public class MMBiomes {
-	
-	public static final Biome MARCUS_BIOME = new BiomeMarcus8448(new BiomeProperties("Marcus8448Biome").setBaseHeight(0.1F).setHeightVariation(0.1F).setRainfall(0.1F).setWaterColor(BiomeMarcus8448.rgb));
-	public static final BiomeEntry biomeEntryMarcusBiome = new BiomeEntry(MARCUS_BIOME, 2147483647);
-	
+    
+    public static final Biome MARCUS_BIOME = new BiomeMarcus8448(new BiomeProperties("Marcus8448Biome").setBaseHeight(0.1F).setHeightVariation(0.1F).setRainfall(0.1F).setWaterColor(BiomeMarcus8448.rgb));
+    public static final BiomeEntry biomeEntryMarcusBiome = new BiomeEntry(MARCUS_BIOME, 2147483647);
+    
 }

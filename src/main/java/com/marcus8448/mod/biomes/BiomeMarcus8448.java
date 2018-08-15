@@ -25,16 +25,16 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  */
 public class BiomeMarcus8448 extends Biome {
     
-	static final Color color = new Color(144, 235, 255);
-	static final int rgb = color.getRGB(); 
-	
+    static final Color color = new Color(144, 235, 255);
+    static final int rgb = color.getRGB(); 
+    
     public BiomeMarcus8448(Biome.BiomeProperties BP)
     {
-    	super(BP);
-    	this.topBlock = Blocks.GRASS.getDefaultState();
-    	this.setRegistryName(Constants.MODID, "marcus_biome");
-    	this.fillerBlock = com.marcus8448.mod.blocks.MMBlocks.BLUE_OAK_PLANKS.getDefaultState();
-    	
+        super(BP);
+        this.topBlock = Blocks.GRASS.getDefaultState();
+        this.setRegistryName(Constants.MODID, "marcus_biome");
+        this.fillerBlock = com.marcus8448.mod.blocks.MMBlocks.BLUE_OAK_PLANKS.getDefaultState();
+        
         this.decorator.sandPatchesPerChunk = 1;
         this.decorator.bigMushroomsPerChunk = 1;
         this.decorator.treesPerChunk = 0;
@@ -58,7 +58,7 @@ public class BiomeMarcus8448 extends Biome {
     }   
 
     public void decorate(World worldIn, Random rand, BlockPos pos) {
-    	int rand1 = rand.nextInt(16) + 8;
+        int rand1 = rand.nextInt(16) + 8;
         int rand2 = rand.nextInt(16) + 8;
         int height1 = worldIn.getHeight(pos.add(rand1, 0, rand2)).getY() * 2;
         if (height1 < 1) height1 = 1;
@@ -69,9 +69,10 @@ public class BiomeMarcus8448 extends Biome {
         
     }
     
+    @SideOnly(Side.CLIENT)
     @Override
     public int getWaterColorMultiplier() {
-    	return 31743;
+        return 31743;
     }
     
     @SideOnly(Side.CLIENT)

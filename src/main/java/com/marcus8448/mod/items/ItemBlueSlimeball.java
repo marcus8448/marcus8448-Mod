@@ -5,7 +5,7 @@ import java.util.List;
 import org.lwjgl.input.Keyboard;
 
 import com.marcus8448.mod.Marcus8448Mod;
-import com.marcus8448.mod.utils.IHasModel;
+import com.marcus8448.mod.utils.IHaveModel;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemStack;
@@ -17,7 +17,7 @@ import net.minecraft.world.World;
  * @since 1.12.2-1.0.0_preAlpha1
  *
  */
-public class ItemBlueSlimeball extends Item implements IHasModel {
+public class ItemBlueSlimeball extends Item implements IHaveModel {
 
 	public ItemBlueSlimeball(String name) {
 		this.setUnlocalizedName(name);

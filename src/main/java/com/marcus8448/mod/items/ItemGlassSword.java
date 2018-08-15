@@ -5,7 +5,7 @@ import java.util.List;
 import org.lwjgl.input.Keyboard;
 
 import com.marcus8448.mod.Marcus8448Mod;
-import com.marcus8448.mod.utils.IHasModel;
+import com.marcus8448.mod.utils.IHaveModel;
 
 import net.minecraft.block.state.IBlockState;
 import net.minecraft.client.util.ITooltipFlag;
@@ -23,7 +23,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * @since 1.12.2-1.0.0_preAlpha2
  *
  */
-public class ItemGlassSword extends ItemSword implements IHasModel {
+public class ItemGlassSword extends ItemSword implements IHaveModel {
  
     public ItemGlassSword(String name, ToolMaterial material) {
         super(material);

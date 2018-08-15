@@ -67,7 +67,7 @@ public class RenderThrowableTNT<T extends Entity> extends Render<T>
     public static class Factory implements IRenderFactory<EntityThrowableTNT> {
 
         @SuppressWarnings({ "rawtypes", "unchecked" })
-		@Override
+        @Override
         public Render<? super EntityThrowableTNT> createRenderFor(RenderManager manager) {
             return new RenderThrowableTNT(manager, itemRenderer);
         }

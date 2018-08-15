@@ -14,8 +14,8 @@ import net.minecraft.world.gen.feature.WorldGenerator;
  *
  */
 public class WorldGenObsidian extends WorldGenerator {
-	
-	public boolean generate(World worldIn, Random rand, BlockPos position)
+    
+    public boolean generate(World worldIn, Random rand, BlockPos position)
     {
         for (int i = 0; i < 64; ++i)
         {

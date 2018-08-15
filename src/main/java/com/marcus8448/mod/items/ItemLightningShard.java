@@ -1,7 +1,7 @@
 package com.marcus8448.mod.items;
 
 import com.marcus8448.mod.Marcus8448Mod;
-import com.marcus8448.mod.utils.IHasModel;
+import com.marcus8448.mod.utils.IHaveModel;
 
 import net.minecraft.item.Item;
 import net.minecraftforge.fml.relauncher.Side;
@@ -13,7 +13,7 @@ import net.minecraftforge.fml.relauncher.SideOnly;
  * @since 1.12.2-1.0.0_preAlpha2
  *
  */
-public class ItemLightningShard extends Item implements IHasModel {
+public class ItemLightningShard extends Item implements IHaveModel {
  
     public ItemLightningShard(String name) {
         this.setRegistryName(name);     

@@ -13,7 +13,7 @@ import org.lwjgl.input.Keyboard;
 
 import com.marcus8448.mod.Marcus8448Mod;
 import com.marcus8448.mod.items.MMItems;
-import com.marcus8448.mod.utils.IHasModel;
+import com.marcus8448.mod.utils.IHaveModel;
 
 import net.minecraft.item.Item;
 import net.minecraft.item.ItemBlock;
@@ -29,10 +29,10 @@ import net.minecraft.world.World;
  * @since 1.12.2-1.0.0_preAlpha3
  *
  */
-public class BlockSecretDoor extends Block implements IHasModel {
+public class BlockSecretDoor extends Block implements IHaveModel {
     
-	public static int ticks = 0;
-	
+    public static int ticks = 0;
+    
     public BlockSecretDoor(String name, Material material) {
         super(material);
         this.setUnlocalizedName(name);
@@ -51,16 +51,16 @@ public class BlockSecretDoor extends Block implements IHasModel {
 
             if (!itemstack.isEmpty() && (itemstack.getItem() == MMItems.KEY ) || (itemstack.getItem() == MMItems.LOCK_PICK ) && !itemstack.isEmpty())
             {
-            	if (playerIn != null) {
+                if (playerIn != null) {
                 worldIn.setBlockState(pos, Blocks.AIR.getDefaultState());
                /* while (BlockSecretDoor.ticks < 1000) {
-                	ticks++;
+                    ticks++;
                 }
-        		BlockSecretDoor.ticks = 0;
-        		
+                BlockSecretDoor.ticks = 0;
+                
                 //worldIn.setBlockState(pos, getDefaultState());
                  */
-            	}
+                }
             }
             return false;
         }

@@ -5,7 +5,7 @@ import java.util.List;
 import org.lwjgl.input.Keyboard;
 
 import com.marcus8448.mod.Marcus8448Mod;
-import com.marcus8448.mod.utils.IHasModel;
+import com.marcus8448.mod.utils.IHaveModel;
 import net.minecraft.client.util.ITooltipFlag;
 import net.minecraft.entity.player.EntityPlayer;
 import net.minecraft.item.Item;
@@ -21,7 +21,7 @@ import net.minecraft.world.World;
  * @since 1.12.2-1.0.0_preAlpha2
  *
  */
-public class ItemLockPick extends Item implements IHasModel {
+public class ItemLockPick extends Item implements IHaveModel {
 
 	public ItemLockPick(String name) {
 		this.setUnlocalizedName(name);
