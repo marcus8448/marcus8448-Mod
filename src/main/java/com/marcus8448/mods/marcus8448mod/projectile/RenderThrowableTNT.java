@@ -1,7 +1,13 @@
 package com.marcus8448.mods.marcus8448mod.projectile;
 
+import javax.swing.Icon;
+
+import org.lwjgl.opengl.GL11;
+import org.lwjgl.opengl.GL12;
+
 import net.minecraft.client.renderer.GlStateManager;
 import net.minecraft.client.renderer.RenderItem;
+import net.minecraft.client.renderer.Tessellator;
 import net.minecraft.client.renderer.block.model.ItemCameraTransforms;
 import net.minecraft.client.renderer.entity.Render;
 import net.minecraft.client.renderer.entity.RenderManager;
@@ -50,6 +56,7 @@ public class RenderThrowableTNT<T extends Entity> extends Render<T> {
         GlStateManager.popMatrix();
         super.doRender(entity, x, y, z, entityYaw, partialTicks);
     }
+    
 
     public ItemStack getStackToRender(T entity) {
         return new ItemStack(MMItems.THROWABLE_TNT);

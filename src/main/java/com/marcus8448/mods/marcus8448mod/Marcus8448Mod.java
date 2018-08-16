@@ -3,8 +3,11 @@ package com.marcus8448.mods.marcus8448mod;
 import java.io.File;
 
 import net.minecraft.block.BlockDispenser;
+import net.minecraft.client.Minecraft;
+import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.dispenser.IPosition;
+import net.minecraft.entity.EntityList;
 import net.minecraft.entity.IProjectile;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
@@ -14,6 +17,7 @@ import net.minecraft.world.World;
 import net.minecraftforge.common.MinecraftForge;
 import net.minecraftforge.common.config.Configuration;
 import net.minecraftforge.common.util.EnumHelper;
+import net.minecraftforge.fml.client.registry.RenderingRegistry;
 import net.minecraftforge.fml.common.Mod;
 import net.minecraftforge.fml.common.Mod.EventHandler;
 import net.minecraftforge.fml.common.Mod.Instance;
@@ -81,6 +85,7 @@ public class Marcus8448Mod {
         config = new Configuration(new File(configDirectory, "marcus8448mod.cfg"));
         Config.readConfig();
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
+        
 
     }
 
@@ -90,6 +95,7 @@ public class Marcus8448Mod {
         int id = 1;
         EntityRegistry.registerModEntity(new ResourceLocation("marcus8448mod:throwable_tnt"), EntityThrowableTNT.class,
                 "ThrowableTnt", id++, Marcus8448Mod.instance, 64, 3, true, 0x996600, 0x00ff00);
+        RenderingRegistry.registerEntityRenderingHandler(EntityThrowableTNT.class, new RenderSnowball<>(Minecraft.getMinecraft().getRenderManager(), MMItems.THROWABLE_TNT, Minecraft.getMinecraft().getRenderItem()));
     }
 
     @EventHandler
@@ -104,7 +110,7 @@ public class Marcus8448Mod {
         });
         Logger.getLogger().info("marcus8448's Mod is Post-Initilizing!");
         if (Config.doYouLikeThisMod == false) {
-            Logger.getLogger().error("Pleae give feedback on why you don't like this mod (;-;)");
+            Logger.getLogger().error("Please give feedback on why you don't like this mod (;-;)");
         }
 
     }

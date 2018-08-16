@@ -14,6 +14,7 @@ import net.minecraftforge.common.BiomeManager.BiomeType;
 import net.minecraftforge.event.RegistryEvent;
 import net.minecraftforge.fml.common.Mod.EventBusSubscriber;
 import net.minecraftforge.fml.common.eventhandler.SubscribeEvent;
+import net.minecraftforge.fml.common.registry.EntityEntry;
 import net.minecraftforge.fml.common.registry.GameRegistry;
 
 import com.marcus8448.mods.marcus8448mod.biomes.MMBiomes;
@@ -42,23 +43,19 @@ public class RegistryHandler {
 
         Event.getRegistry().registerAll(MMBlocks.BLOCKS.toArray((new Block[0])));
         GameRegistry.registerTileEntity(TileEntityPedestal.class, "tile_entity_pedestal");
-
     }
-
+    
+    @SubscribeEvent
+    public static void onEntityRegister(RegistryEvent.Register<EntityEntry> event) {
+    }
+    
     @SubscribeEvent
     public static void onBiomeRegister(RegistryEvent.Register<Biome> Event) {
         Event.getRegistry().register(MMBiomes.MARCUS_BIOME);
 
         BiomeManager.addBiome(BiomeType.COOL, MMBiomes.biomeEntryMarcusBiome);
-        // ForgeRegistries.BIOMES.register(MarcusModBiomes.MARCUS_BIOME);
-        System.out.println(BiomeProvider.allowedBiomes);
-        // BiomeProvider.allowedBiomes.clear();
         BiomeProvider.allowedBiomes.add(MMBiomes.MARCUS_BIOME);
-        System.out.println(BiomeProvider.allowedBiomes);
         BiomeManager.addVillageBiome(MMBiomes.MARCUS_BIOME, true);
-        System.out.println(MapGenVillage.VILLAGE_SPAWN_BIOMES);
-        // BiomeManager.strongHoldBiomes.clear();
-        // BiomeManager.strongHoldBiomes.add(Biomes.BEACH);
         BiomeManager.strongHoldBiomes.add(MMBiomes.MARCUS_BIOME);
         System.out.println(BiomeManager.strongHoldBiomes);
         BiomeDictionary.addTypes(MMBiomes.MARCUS_BIOME, Type.MAGICAL);
