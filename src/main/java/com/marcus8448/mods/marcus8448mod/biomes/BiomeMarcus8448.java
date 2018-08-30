@@ -3,6 +3,7 @@ package com.marcus8448.mods.marcus8448mod.biomes;
 import java.awt.Color;
 import java.util.Random;
 
+import net.minecraft.block.Block;
 import net.minecraft.entity.monster.EntityIronGolem;
 import net.minecraft.entity.monster.EntityZombieVillager;
 import net.minecraft.entity.passive.EntityHorse;
@@ -16,12 +17,14 @@ import net.minecraftforge.fml.relauncher.Side;
 import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.marcus8448.mods.marcus8448mod.gen.WorldGenObsidian;
+import com.marcus8448.mods.marcus8448mod.gen.WorldGenTower;
 import com.marcus8448.mods.marcus8448mod.utils.Constants;
+import com.marcus8448.mods.marcus8448mod.utils.Logger;
 
 /**
  * 
  * @author marcus8448
- * @since 1.12.2-1.0.0_preAlpha2
+ * @since 1.12.2-1.0.0
  *
  */
 public class BiomeMarcus8448 extends Biome {
@@ -65,12 +68,9 @@ public class BiomeMarcus8448 extends Biome {
         if (height1 < 1) {
             height1 = 1;
         }
-        int height = rand.nextInt(height1);
-        (new WorldGenObsidian()).generate(worldIn, rand, pos.add(rand1, height, rand2));
-        // (new WorldGenTower()).generate(worldIn, rand, pos.add(rand1, height, rand2));
-        // //Currently bugged, use other stuff
+        (new WorldGenObsidian()).generate(worldIn, rand, pos.add(rand1, height1, rand2));
+        (new WorldGenTower()).generate(worldIn, rand, pos.add(rand1, height1, rand2));
         decorator.decorate(worldIn, rand, this, pos);
-
     }
 
     @SideOnly(Side.CLIENT)
@@ -97,6 +97,8 @@ public class BiomeMarcus8448 extends Biome {
         addFlower(Blocks.BLUE_GLAZED_TERRACOTTA.getDefaultState(), 5);
         addFlower(Blocks.OBSIDIAN.getDefaultState(), 3);
         addFlower(Blocks.SAPLING.getDefaultState(), 7);
+        addFlower(Blocks.TNT.getDefaultState(), 2);
+        addFlower(Blocks.ICE.getDefaultState(), 4);
     }
 
     @SideOnly(Side.CLIENT)

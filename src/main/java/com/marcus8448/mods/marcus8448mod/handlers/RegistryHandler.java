@@ -4,7 +4,6 @@ import net.minecraft.block.Block;
 import net.minecraft.item.Item;
 import net.minecraft.world.biome.Biome;
 import net.minecraft.world.biome.BiomeProvider;
-import net.minecraft.world.gen.structure.MapGenVillage;
 
 import net.minecraftforge.client.event.ModelRegistryEvent;
 import net.minecraftforge.common.BiomeDictionary;
@@ -44,11 +43,11 @@ public class RegistryHandler {
         Event.getRegistry().registerAll(MMBlocks.BLOCKS.toArray((new Block[0])));
         GameRegistry.registerTileEntity(TileEntityPedestal.class, "tile_entity_pedestal");
     }
-    
+
     @SubscribeEvent
     public static void onEntityRegister(RegistryEvent.Register<EntityEntry> event) {
     }
-    
+
     @SubscribeEvent
     public static void onBiomeRegister(RegistryEvent.Register<Biome> Event) {
         Event.getRegistry().register(MMBiomes.MARCUS_BIOME);

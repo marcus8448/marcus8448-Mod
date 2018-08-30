@@ -7,7 +7,6 @@ import net.minecraft.client.Minecraft;
 import net.minecraft.client.renderer.entity.RenderSnowball;
 import net.minecraft.creativetab.CreativeTabs;
 import net.minecraft.dispenser.IPosition;
-import net.minecraft.entity.EntityList;
 import net.minecraft.entity.IProjectile;
 import net.minecraft.item.Item.ToolMaterial;
 import net.minecraft.item.ItemStack;
@@ -85,7 +84,6 @@ public class Marcus8448Mod {
         config = new Configuration(new File(configDirectory, "marcus8448mod.cfg"));
         Config.readConfig();
         NetworkRegistry.INSTANCE.registerGuiHandler(this, new GuiHandler());
-        
 
     }
 
@@ -95,7 +93,9 @@ public class Marcus8448Mod {
         int id = 1;
         EntityRegistry.registerModEntity(new ResourceLocation("marcus8448mod:throwable_tnt"), EntityThrowableTNT.class,
                 "ThrowableTnt", id++, Marcus8448Mod.instance, 64, 3, true, 0x996600, 0x00ff00);
-        RenderingRegistry.registerEntityRenderingHandler(EntityThrowableTNT.class, new RenderSnowball<>(Minecraft.getMinecraft().getRenderManager(), MMItems.THROWABLE_TNT, Minecraft.getMinecraft().getRenderItem()));
+        RenderingRegistry.registerEntityRenderingHandler(EntityThrowableTNT.class,
+                new RenderSnowball<>(Minecraft.getMinecraft().getRenderManager(), MMItems.THROWABLE_TNT,
+                        Minecraft.getMinecraft().getRenderItem()));
     }
 
     @EventHandler

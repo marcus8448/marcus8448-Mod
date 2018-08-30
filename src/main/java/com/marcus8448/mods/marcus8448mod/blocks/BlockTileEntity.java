@@ -12,7 +12,7 @@ import net.minecraft.world.World;
 /**
  * 
  * @author marcus8448
- * @since 1.12.2-1.0.0_Alpha
+ * @since 1.12.2-1.0.0
  *
  */
 public abstract class BlockTileEntity<TE extends TileEntity> extends BlockBasic {

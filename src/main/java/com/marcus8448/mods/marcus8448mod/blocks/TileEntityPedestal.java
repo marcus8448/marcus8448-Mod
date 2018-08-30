@@ -13,7 +13,7 @@ import net.minecraftforge.items.ItemStackHandler;
 /**
  * 
  * @author marcus8448
- * @since 1.12.2-1.0.0_Alpha
+ * @since 1.12.2-1.0.0
  *
  */
 public class TileEntityPedestal extends TileEntity {

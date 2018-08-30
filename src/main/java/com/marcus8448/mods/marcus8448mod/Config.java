@@ -7,7 +7,7 @@ import com.marcus8448.mods.marcus8448mod.utils.Logger;
 /**
  * 
  * @author marcus8448
- * @since 1.12.2-1.0.0_preAlpha1
+ * @since 1.12.2-1.0.0
  *
  */
 public class Config {
