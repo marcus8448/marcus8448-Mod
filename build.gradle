@@ -8,11 +8,9 @@ buildscript {
     }
 }
 apply plugin: 'net.minecraftforge.gradle.forge'
-//Only edit below this line, the above code adds and enables the necessary things for Forge to be setup.
 
-
-version = "0.0.1"
-group = "com.marcus8448.mod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
+version = "1.0.0-Alpha"
+group = "com.marcus8448.mods.marcus8448mod" // http://maven.apache.org/guides/mini/guide-naming-conventions.html
 archivesBaseName = "marcus8448mod"
 
 sourceCompatibility = targetCompatibility = '1.8' // Need this here so eclipse task generates correctly.
@@ -23,14 +21,8 @@ compileJava {
 minecraft {
     version = "1.12.2-14.23.2.2611"
     runDir = "run"
-    
-    // the mappings can be changed at any time, and must be in the following format.
-    // snapshot_YYYYMMDD   snapshot are built nightly.
-    // stable_#            stables are built at the discretion of the MCP team.
-    // Use non-default mappings at your own risk. they may not always work.
-    // simply re-run your setup task after changing the mappings to update your workspace.
     mappings = "snapshot_20171003"
-    // makeObfSourceJar = false // an Srg named sources jar is made by default. uncomment this to disable.
+    // makeObfSourceJar = false // Turn off SRG named sources jar
 }
 
 task deobfJar(type: Jar, dependsOn: 'jar') {
@@ -44,7 +36,7 @@ artifacts {
 task sourceJar(type: Jar, dependsOn: 'sourceMainJava') {
     from "build/sources/java"
     from "build/resources/main/java"
-    classifier "sources"
+ 	  classifier "sources"
 }
 artifacts {
     archives sourceJar
