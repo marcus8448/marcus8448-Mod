@@ -26,6 +26,8 @@ import net.minecraftforge.fml.common.event.FMLPostInitializationEvent;
 import net.minecraftforge.fml.common.event.FMLPreInitializationEvent;
 import net.minecraftforge.fml.common.network.NetworkRegistry;
 import net.minecraftforge.fml.common.registry.EntityRegistry;
+import net.minecraftforge.fml.relauncher.Side;
+import net.minecraftforge.fml.relauncher.SideOnly;
 
 import com.marcus8448.mods.marcus8448mod.handlers.GuiHandler;
 import com.marcus8448.mods.marcus8448mod.handlers.MMEventHandler;
@@ -42,6 +44,7 @@ import com.marcus8448.mods.marcus8448mod.utils.Logger;
  * {@link marcus8448.github.io/mods/marcus8448-mod}
  * 
  * @author marcus8448
+ * TODO Redo all [@]since's to 1.0.0
  * 
  */
 @Mod(modid = Constants.MODID, name = Constants.NAME, version = Constants.VERSION, useMetadata = false, acceptedMinecraftVersions = Constants.MCV)
@@ -93,11 +96,17 @@ public class Marcus8448Mod {
         int id = 1;
         EntityRegistry.registerModEntity(new ResourceLocation("marcus8448mod:throwable_tnt"), EntityThrowableTNT.class,
                 "ThrowableTnt", id++, Marcus8448Mod.instance, 64, 3, true, 0x996600, 0x00ff00);
+        client();
+    }
+    
+    @SuppressWarnings("deprecation")
+    @SideOnly(Side.CLIENT)
+    public void client() {
         RenderingRegistry.registerEntityRenderingHandler(EntityThrowableTNT.class,
                 new RenderSnowball<>(Minecraft.getMinecraft().getRenderManager(), MMItems.THROWABLE_TNT,
                         Minecraft.getMinecraft().getRenderItem()));
     }
-
+    
     @EventHandler
     public void postInit(FMLPostInitializationEvent event) {
         BlockDispenser.DISPENSE_BEHAVIOR_REGISTRY.putObject(MMItems.THROWABLE_TNT, new BehaviorProjectileDispense() {
