@@ -61,10 +61,6 @@ Desktop.ini
 # Mac trash
 .DS_Store
 
-# ForgeGradle
-gradle/wrapper/
-gradlew
-
 #Minecraft Logs
 *.log.gz
 
